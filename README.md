@@ -11,20 +11,22 @@ A full-stack TypeScript/React + Node.js library management system demonstrating:
 
 ### Quick Start
 
-1. Prerequisites:
 
-   - Node.js 14+
-   - PostgreSQL 12+
-   - Git
+## Prerequisites
 
-2. Clone and install:
+- **Node.js 14+** (16+ recommended)
+- **PostgreSQL 12+**
+- **Git**
 
-   ```bash
-    git clone https://github.com/Anumishra02/Library-Lite.git
-   cd Library-Lite
-   ```
+## Installation
 
-3. Setup backend:
+### Clone and setup:
+```bash
+git clone https://github.com/Anumishra02/Library-Lite-Pifinity-Foundation-Project-.git
+cd Library-Lite-Pifinity-Foundation-Project-
+```
+3. Setup backend
+
 
    ```bash
    cd backend
@@ -130,13 +132,45 @@ npm test
 cd frontend
 npm test
 ```
-If successful, it should open automatically at:
+Troubleshooting
+Common Issues:
+Database Connection Errors:
 
-http://localhost:3000
+Verify PostgreSQL is running: pg_isready
+
+Check .env file has correct credentials
+
+Ensure library_lite database exists
+
+Port Conflicts:
+
+bash
+# Kill processes on common ports
+```bash
+npx kill-port 5002  # Backend
+npx kill-port 3000  # Frontend
+```
+CORS Errors:
+
+Ensure frontend runs on http://localhost:3000
+
+Backend CORS allows ports 3000-3009
+
+OpenLibrary API Issues:
+
+Check internet connectivity
+
+API falls back to local samples if unreachable
+
+Health Checks:
+Backend: http://localhost:5002/api/health
+
+Frontend: http://localhost:3000
 
 Key files:
 
 - `frontend/src/components/Catalog.tsx` - Main UI component
 - `backend/server.js` - Express server + API routes
 - `frontend/src/services/libraryService.ts` - API client/business logic
+
 
