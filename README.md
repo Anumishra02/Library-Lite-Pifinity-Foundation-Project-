@@ -65,7 +65,18 @@ DB_PASSWORD=password
 DB_PORT=5432
 PORT=5002
 ```
+Now initialize and start your backend:
+```bash
+npm start
+```
 
+If successful, you should see:
+```bash
+Connected to PostgreSQL database
+✅ Database tables initialized
+🚀 Backend server running on port 5002
+📊 Health check: http://localhost:5002/api/health
+```
 ### Features
 
 #### 📚 Book Population
@@ -119,9 +130,13 @@ npm test
 cd frontend
 npm test
 ```
+If successful, it should open automatically at:
+
+http://localhost:3000
 
 Key files:
 
 - `frontend/src/components/Catalog.tsx` - Main UI component
 - `backend/server.js` - Express server + API routes
 - `frontend/src/services/libraryService.ts` - API client/business logic
+
