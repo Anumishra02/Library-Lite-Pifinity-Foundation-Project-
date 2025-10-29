@@ -20,21 +20,25 @@ A full-stack TypeScript/React + Node.js library management system demonstrating:
 2. Clone and install:
 
    ```bash
-   git clone <repo-url>
-   cd library-lite
+    git clone https://github.com/Anumishra02/Library-Lite.git
+   cd Library-Lite
    ```
 
-3. Setup database:
+3. Setup backend:
 
    ```bash
-   # Start PostgreSQL and create database
-   createdb library_lite  # or use pgAdmin
-
-   # Configure backend
    cd backend
-   cp .env.example .env   # edit with your DB credentials
+
+   # Create environment file
+   cp .env.example .env
+
+   # Edit the .env file with your database credentials
+   # Use any text editor to update these values:
+   # DB_USER=postgres
+   # DB_PASSWORD=password
+   # DB_NAME=library_lite
+
    npm install
-   npm run init-db
    ```
 
 4. Start backend:
@@ -48,8 +52,19 @@ A full-stack TypeScript/React + Node.js library management system demonstrating:
    ```bash
    cd frontend
    npm install
-   npm start   # runs on http://localhost:3001
+   npm start   # runs on http://localhost:3000
    ```
+
+Environment Configuration
+backend/.env file:
+```bash
+DB_USER=postgres
+DB_HOST=localhost
+DB_NAME=library_lite
+DB_PASSWORD=password
+DB_PORT=5432
+PORT=5002
+```
 
 ### Features
 
@@ -96,7 +111,12 @@ Example response:
 Run tests:
 
 ```bash
+# Backend tests
 cd backend
+npm test
+
+# Frontend tests  
+cd frontend
 npm test
 ```
 
@@ -105,11 +125,3 @@ Key files:
 - `frontend/src/components/Catalog.tsx` - Main UI component
 - `backend/server.js` - Express server + API routes
 - `frontend/src/services/libraryService.ts` - API client/business logic
-
-### Screenshots
-
-![Populate Books](docs/populate-books.png)
-_Populate dialog showing OpenLibrary integration_
-
-![Book List](docs/book-list.png)
-_Main catalog with cover images and tags_
